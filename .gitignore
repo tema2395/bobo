@@ -1,0 +1,10 @@
+# created by virtualenv automatically
+.idea
+.vscode
+__pycache__
+.Ds_Store
+bin
+lib
+virtualenv
+picturesforbot
+users_pic

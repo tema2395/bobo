@@ -1,7 +1,7 @@
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
-from fsm import Menu
+from fsm import Menu, Order
 from aiogram.fsm.context import FSMContext
 import keyboards
 from pictures import *
@@ -44,4 +44,4 @@ async def calc(callback: CallbackQuery, state: FSMContext):
 @rt2.callback_query(F.data == "make_order")
 async def make_order(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer_media_group(media = order_photo.build())
-    await state.set_state(Menu.photo_id)
+    await state.set_state(Order.fullname)

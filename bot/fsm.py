@@ -5,9 +5,12 @@ class Menu(StatesGroup):
     calc = State()
     start = State()
     end_calc = State()
-    address = State()
+    
+    
+class Order(StatesGroup):
     fullname = State()
+    address = State()
     size = State()
     price = State()
     link = State()
-    photo_id = State()
+    end_order = State()

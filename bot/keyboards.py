@@ -36,7 +36,7 @@ buttons_calc = [
 ###Кнопки после полного вывода заказа
 buttons_order = [
     [types.InlineKeyboardButton(text="Да, все верно✅", callback_data='accept')],
-    [types.InlineKeyboardButton(text="Изменить✏️", callback_data='redaction')],
+    [types.InlineKeyboardButton(text="Изменить✏️", callback_data='make_order')],
 ]
 
 

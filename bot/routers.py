@@ -34,7 +34,7 @@ async def calc(message: Message, state: FSMContext):
 @rt1.message(Order.fullname)
 async def fullname(message: Message, state: FSMContext):
     'Registration'
-    await message.answer(f"Введите ваше ФИО<b>(как в паспорте):</b>\n\n<i>Это нужно для получения товара</i>")
+    await message.answer(f"Введите ваше ФИО<b>(как в паспорте):</b> и имя пользователя Telegram\n\n<i>Это нужно для получения товара</i>\n\n<b>Пример</b>\n<i>Иванов Иван Иванович @1234</i>")
     await state.set_state(Order.link)
 
 
@@ -92,5 +92,6 @@ async def add_process(message: Message, state: FSMContext):
     
     user_data = await get_user_data(message.from_user.id)
     if user_data:
-        user_order = f"Ваше ФИО: {user_data['fullname']}\nСсылка на ваш товар: {user_data['link']}\nАдрес доставки: {user_data['address']}\nРазмер вашего товара: {user_data['size']}\nЦена товара: {(user_data['price']*13.5+400)}<i> рублей</i>\n\n<b>Внимательно проверяйте ваши данные!!</b>"
+        user_order = f"Ваше ФИО: {user_data['fullname']}\nСсылка на ваш товар: {user_data['link']}\nАдрес доставки: {user_data['address']}\nРазмер вашего товара: {user_data['size']}\nЦена товара: {(user_data['price']*13.5+400)}<i> рублей</i>\n\n<b>Внимательно проверяйте введенные вами данные!!</b>"
         await message.answer(user_order, reply_markup=keyboards.ORDER_KEYS)
+    

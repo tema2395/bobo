@@ -16,7 +16,7 @@ dp = Dispatcher()  # экземпляр диспетчера
 
 
 async def main() -> None:
-    dp.include_routers(rt1, rt2)  # rt2
+    dp.include_routers(rt1, rt2)
     await dp.start_polling(bot)
 
 

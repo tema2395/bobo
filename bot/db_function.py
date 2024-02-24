@@ -1,7 +1,6 @@
 import connect
 
-
-###создание таблицы(1 раз)###
+###Creating a table(1 time)###
 conn, cur = connect.connect_db()
 cur.execute(("""CREATE TABLE IF NOT EXISTS users(
     id SERIAL PRIMARY KEY,
@@ -17,9 +16,9 @@ cur.execute(("""CREATE TABLE IF NOT EXISTS users(
 
 conn.commit()
     
-    
-###добавление информации о пользователе в бд###
+
 async def add_user_to_db(user_id, fullname, link, address, size, price) -> None:
+    'Adding user information to the database'
     try:
         conn, cur = connect.connect_db()
     
@@ -27,13 +26,14 @@ async def add_user_to_db(user_id, fullname, link, address, size, price) -> None:
                    VALUES (%s, %s, %s, %s, %s, %s)""",
                 (user_id, fullname, link, address, size, price))
         conn.commit()
-        print(f"Пользователь {fullname} с user_id {user_id} успешно добавлен в базу, данных.")
+        print(f"Пользователь {fullname} с user_id {user_id} успешно добавлен в базу данных.")
     except Exception as e:
         print(f"Ошибка при добавлении пользователя в базу данных:{e}")
     
     
-###полчение информации о заказе из бд###
+
 async def get_user_data(user_id: int) -> dict:
+    'Getting order information from the database'
     try:
         conn, cur = connect.connect_db()
         query = """SELECT fullname, link, address, size, price FROM users WHERE user_id = %s"""

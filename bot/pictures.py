@@ -14,6 +14,7 @@ calc_photo.add_photo(
     media=FSInputFile("/Users/absq/Desktop/bobolink/picturesforbot/examp.jpg")
 )
 
+
 order_photo = MediaGroupBuilder(
     caption=f"<b>(ДОСТАВКА ЗАВИСИТ ОТ ВЕСА ЗАКАЗА, ПОЭТОМУ ОНА ОПЛАЧИВАЕТСЯ ОТДЕЛЬНО)</b>\n\n<i>Смотрите на знак '≈' перед ценой</i>(<b>НЕЛЬЗЯ ЗАКАЗАТЬ</b>)\n\nДля оформления заказа вам нужно пройти <b>регистрацию</b>\n\nНапишите слово <i>'Оформление'</i>"
 )
@@ -23,3 +24,4 @@ order_photo.add_photo(
 order_photo.add_photo(
     media=FSInputFile("/Users/absq/Desktop/bobolink/picturesforbot/examp.jpg")
 )
+    

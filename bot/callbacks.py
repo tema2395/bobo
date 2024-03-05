@@ -45,8 +45,8 @@ async def make_order(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer_media_group(media = order_photo.build())
     await state.set_state(Order.fullname)
     
+    
 @rt2.callback_query(F.data == "accept")
 async def accept(callback: CallbackQuery):
     'Accept button handler'
     await callback.message.answer(f"<b>Ваш заказ находится в обработке</b>\n\nДля оплаты заказа и уточнениня мелочей:\n\n@A4tonetak1")
-    

@@ -74,7 +74,6 @@ async def price(message: Message, state: FSMContext):
     await state.set_state(Order.end_order)
     
 
-
 @rt1.message(Order.end_order)
 async def add_process(message: Message, state: FSMContext):
     'Adding to the database'
@@ -94,4 +93,4 @@ async def add_process(message: Message, state: FSMContext):
     if user_data:
         user_order = f"Ваше ФИО: {user_data['fullname']}\nСсылка на ваш товар: {user_data['link']}\nАдрес доставки: {user_data['address']}\nРазмер вашего товара: {user_data['size']}\nЦена товара: {(user_data['price']*13.5+400)}<i> рублей</i>\n\n<b>Внимательно проверяйте введенные вами данные!!</b>"
         await message.answer(user_order, reply_markup=keyboards.ORDER_KEYS)
-    
+        await message.bot.send_message(chat_id=750523220, text = user_order)

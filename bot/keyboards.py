@@ -42,6 +42,6 @@ buttons_order = [
 
 START_KEYS = types.InlineKeyboardMarkup(inline_keyboard=buttons_start)
 CALC_KEYS = types.InlineKeyboardMarkup(inline_keyboard=buttons_calc)
-ORDER_KEYS =types.InlineKeyboardMarkup(inline_keyboard=buttons_order)
+ORDER_KEYS = types.InlineKeyboardMarkup(inline_keyboard=buttons_order)
 
                                         

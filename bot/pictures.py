@@ -24,4 +24,3 @@ order_photo.add_photo(
 order_photo.add_photo(
     media=FSInputFile("/Users/absq/Desktop/bobolink/picturesforbot/examp.jpg")
 )
-    

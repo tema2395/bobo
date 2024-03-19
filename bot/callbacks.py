@@ -12,7 +12,7 @@ rt2 = Router()
 
 @rt2.callback_query(F.data == "calculate")
 async def calc(callback: CallbackQuery, state: FSMContext):
-    'Calculator button handler'
+    "Calculator button handler"
     await callback.message.answer_media_group(media=calc_photo.build())
     await callback.message.answer(f"Введите стоимость товара в <b>ЮАНЯХ</b>")
     await callback.answer()
@@ -21,7 +21,7 @@ async def calc(callback: CallbackQuery, state: FSMContext):
 
 @rt2.callback_query(F.data == "main_menu", Menu.end_calc)
 async def back_to_menu(callback: CallbackQuery, state: FSMContext):
-    'Main menu return button handler'
+    "Main menu return button handler"
     await callback.message.answer_photo(
         start_photo,
         caption="Добро пожаловать в бота группы <b>bobolink</b>",
@@ -32,7 +32,7 @@ async def back_to_menu(callback: CallbackQuery, state: FSMContext):
 
 @rt2.callback_query(F.data == "repeat", Menu.end_calc)
 async def calc(callback: CallbackQuery, state: FSMContext):
-    'Repeat calculation button handler'
+    "Repeat calculation button handler"
     await callback.message.answer_media_group(media=calc_photo.build())
     await callback.message.answer(f"Введите стоимость товара в <b>ЮАНЯХ</b>")
     await callback.answer()
@@ -41,12 +41,14 @@ async def calc(callback: CallbackQuery, state: FSMContext):
 
 @rt2.callback_query(F.data == "make_order")
 async def make_order(callback: CallbackQuery, state: FSMContext):
-    'Make order button handler'
-    await callback.message.answer_media_group(media = order_photo.build())
+    "Make order button handler"
+    await callback.message.answer_media_group(media=order_photo.build())
     await state.set_state(Order.fullname)
-    
-    
+
+
 @rt2.callback_query(F.data == "accept")
 async def accept(callback: CallbackQuery):
-    'Accept button handler'
-    await callback.message.answer(f"<b>Ваш заказ находится в обработке</b>\n\nДля оплаты заказа и уточнениня мелочей:\n\n@A4tonetak1")
+    "Accept button handler"
+    await callback.message.answer(
+        f"<b>Ваш заказ находится в обработке</b>\n\nДля оплаты заказа и уточнениня мелочей:\n\n@A4tonetak1"
+    )

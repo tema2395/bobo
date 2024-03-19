@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 
 bot = Bot(TOKEN, parse_mode=ParseMode.HTML)  # экземпляр бота
-dp = Dispatcher()  # экземпляр диспетчера 
+dp = Dispatcher()  # экземпляр диспетчера
 
 
 async def main() -> None:

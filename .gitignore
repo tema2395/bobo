@@ -8,3 +8,4 @@ lib
 virtualenv
 picturesforbot
 users_pic
+.env
